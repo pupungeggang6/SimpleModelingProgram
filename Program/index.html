@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Modeling Program</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div id="Main">
+            <div id="Button">
+                <button id="ButtonNew" class="Button" onclick="onButtonNewClick()"></button>
+                <button id="ButtonLoad" class="Button"></button>
+                <button id="ButtonSave" class="Button" onclick="onButtonSaveClick()"></button>
+                <button id="ButtonExport" class="Button"></button>
+                <button id="ButtonCube" class="Button"></button>
+                <button id="ButtonCameraMove" class="Button"></button>
+                <button id="ButtonCameraRotate" class="Button"></button>
+            </div>
+            <div id="Hierarchy">
+                <div id="ItemCube"></div>
+            </div>
+            <div id="Space">
+                <canvas id="Screen" width="400" height="400"></canvas>
+            </div>
+            <div id="Properties">
+                <div id="Position">
+                    <div id="PositionTitle" class="PropertiesContent">Position</div>
+                    <div id="PositionNumber" class="PropertiesContent">
+                        x <input id="PositionX" type="number" class="InputNumber"/>
+                        y <input id="PositionY" type="number" class="InputNumber"/>
+                        z <input id="PositionZ" type="number" class="InputNumber"/>
+                    </div>
+                </div>
+                <div id="Scale">
+                    <div id="ScaleTitle" class="PropertiesContent">Scale</div>
+                    <div id="ScaleNumber" class="PropertiesContent">
+                        x <input id="ScaleX" type="number" class="InputNumber"/>
+                        y <input id="ScaleY" type="number" class="InputNumber"/>
+                        z <input id="ScaleZ" type="number" class="InputNumber"/>
+                    </div>
+                </div>
+                <div id="Rotation">
+                    <div id="RotationTitle" class="PropertiesContent">Rotation</div>
+                    <div id="RotationNumber" class="PropertiesContent">
+                        x <input id="RotationX" type="number" class="InputNumber"/>
+                        y <input id="RotationY" type="number" class="InputNumber"/>
+                        z <input id="RotationZ" type="number" class="InputNumber"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Misc">
+            <input id="FileLoad" type="file" accept="text"/>
+        </div>
+
+        <script src="Script/Asset.js"></script>
+        <script src="Script/UI.js"></script>
+        <script src="Script/Const.js"></script>
+        <script src="Script/Var.js"></script>
+
+        <script src="Script/FunctionPhysics.js"></script>
+        <script src="Script/FunctionMath.js"></script>
+        <script src="Script/FunctionDraw.js"></script>
+        <script src="Script/FunctionProgram.js"></script>
+
+        <script src="Script/Scene.js"></script>
+
+        <script src="Script/Main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+#Main {
+    position : absolute;
+    left : 0px;
+    top : 0px;
+}
+
+#Button {
+    border : 2px solid black;
+    position : absolute;
+    left : 0px;
+    top : 0px;
+    width : 800px;
+    height : 40px;
+}
+
+.Button {
+    width : 40px;
+    height : 40px;
+    border : none;
+}
+
+#ButtonNew {
+    background-image : url('Image/ButtonNew.png');
+}
+
+#ButtonSave {
+    background-image : url('Image/ButtonSave.png');
+}
+
+#ButtonLoad {
+    background-image : url('Image/ButtonLoad.png');
+}
+
+#ButtonExport {
+    background-image : url('Image/ButtonExport.png');
+}
+
+#ButtonCube {
+    background-image : url('Image/ButtonCube.png');
+}
+
+#ButtonCameraMove {
+    background-image : url('Image/ButtonCameraMove.png');
+}
+
+#ButtonCameraRotate {
+    background-image : url('Image/ButtonCameraRotate.png');
+}
+
+#ButtonDelete {
+    background-image : url('Image/ButtonDelete.png');
+}
+
+#Hierarchy {
+    border : 2px solid black;
+    position : absolute;
+    left : 0px;
+    top : 40px;
+    width : 200px;
+    height : 400px;
+}
+
+#Space {
+    border : 2px solid black;
+    position : absolute;
+    left : 200px;
+    top : 40px;
+    width : 400px;
+    height : 400px;
+}
+
+#Properties { 
+    border : 2px solid black;
+    position : absolute;
+    left : 600px;
+    top : 40px;
+    width : 200px;
+    height : 400px;
+}
+
+.InputNumber {
+    width : 30px;
+}
+
+.PropertiesContent {
+    margin-left : 4px;
+    margin-top : 4px;
+}
