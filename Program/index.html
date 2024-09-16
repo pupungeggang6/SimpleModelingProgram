@@ -8,7 +8,7 @@
         <div id="Main">
             <div id="Button">
                 <button id="ButtonNew" class="Button" onclick="onButtonNewClick()"></button>
-                <button id="ButtonLoad" class="Button"></button>
+                <button id="ButtonLoad" class="Button" onclick="onButtonLoadClick()"></button>
                 <button id="ButtonSave" class="Button" onclick="onButtonSaveClick()"></button>
                 <button id="ButtonExport" class="Button"></button>
                 <button id="ButtonCube" class="Button"></button>
@@ -50,7 +50,7 @@
         </div>
 
         <div id="Misc">
-            <input id="FileLoad" type="file" accept="text"/>
+            <input id="FileLoad" type="file" accept="text/*" onchange="uploadDataFile(this)"/>
         </div>
         <script src="Script/Const.js"></script>
         <script src="Script/Var.js"></script>

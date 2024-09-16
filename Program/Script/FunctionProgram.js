@@ -8,6 +8,10 @@ function onButtonNewClick() {
     }
 }
 
+function onButtonLoadClick() {
+    DOM.fileLoad.click()
+}
+
 function onButtonSaveClick() {
     let saveText = JSON.stringify(space3D)
     const blob = new Blob([saveText], {type: 'text/plain'})
@@ -18,4 +22,14 @@ function onButtonSaveClick() {
     a.click()
     a.remove()
     window.URL.revokeObjectURL(url)
+}
+
+function uploadDataFile(input) {
+    let file = input.files[0]
+    let reader = new FileReader()
+    reader.readAsText(file)
+
+    reader.addEventListener('load', () => {
+        space3D = JSON.parse(reader.result)
+    }, false)
 }

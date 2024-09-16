@@ -3,7 +3,8 @@ function loopScene() {
 }
 
 function displayScene() {
-
+    drawSceneInit()
+    draw()
 }
 
 function mouseDownScene(x, y, button) {

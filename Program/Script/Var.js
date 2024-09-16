@@ -1,5 +1,5 @@
 let canvas
-let context
+let gl
 
 let programInstance
 let programFrameCurrent
@@ -20,11 +20,20 @@ let DOM = {
 let varMouse = [0, 0]
 
 let varGL = {
+    program : null,
     location : {
-
+        position : null,
+        camera : null,
+        color : null
     },
-    program : {
-
+    shader : {
+        vertex : null,
+        fragment : null,
+        sourceVertex : '',
+        sourceFragment : '',
+    },
+    buffer : {
+        vertex : null,
     }
 }
 
