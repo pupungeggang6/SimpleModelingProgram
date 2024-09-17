@@ -33,3 +33,23 @@ function uploadDataFile(input) {
         space3D = JSON.parse(reader.result)
     }, false)
 }
+
+function refreshHierarchy() {
+    let tempHTML = ''
+
+    for (let i = 0; i < space3D.cuboid.length; i++) {
+        tempHTML += `<input type="text" onclick="onHierarchyClick(${i})" onchange="onCuboidNameChange(${this})"/><br>`
+    }
+
+    DOM.itemCuboid.innerHTML = tempHTML
+}
+
+function onHierarchyClick(index) {
+    state = 'CuboidSelected'
+    varEditor.selectedCuboid = index
+    console.log(index)
+}
+
+function onCuboidNameChange() {
+    space3D.cuboid[varEditor.selectedCuboid]['Name'] = this.value
+}

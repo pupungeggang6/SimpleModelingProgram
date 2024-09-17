@@ -14,7 +14,8 @@ let DOM = {
     buttonLoad : null,
     buttonExport : null,
     fileSave : null,
-    fileLoad : null
+    fileLoad : null,
+    itemCuboid : null,
 }
 
 let varMouse = [0, 0]
@@ -39,7 +40,13 @@ let varGL = {
 
 let space3D = {
     light : [0, 0, -1],
-    cameraPosition : [0, 0, 0],
+    cameraPosition : [0, 0, 1],
     cameraRotation : [0, 0, 0],
-    cuboid : []
+    cuboid : [
+        {'Name' : 'Cuboid 1', 'Geometry' : [0, 0, 0, 0, 0, 0, 1, 1, 1]}
+    ]
+}
+
+let varEditor = {
+    selectedCuboid : -1,
 }

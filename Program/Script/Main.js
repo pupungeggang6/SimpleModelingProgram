@@ -21,6 +21,7 @@ function main() {
 function DOMInit() {
     DOM.fileLoad = document.getElementById('FileLoad')
     DOM.fileLoad.style.visibility = 'hidden'
+    DOM.itemCuboid = document.getElementById('ItemCuboid')
 }
 
 function glInit() {
