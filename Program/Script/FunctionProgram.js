@@ -67,8 +67,8 @@ function uploadDataFile(input) {
 
     reader.addEventListener('load', () => {
         space3D = JSON.parse(reader.result)
+        updateHierarchy()
     }, false)
-    updateHierarchy()
 }
 
 function updateHierarchy() {
