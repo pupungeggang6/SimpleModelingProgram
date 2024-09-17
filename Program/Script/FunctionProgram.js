@@ -49,8 +49,10 @@ function onButtonCameraClick() {
 }
 
 function onButtonDeleteClick() {
+    space3D.cuboid.splice(varEditor.selectedCuboid, 1)
     varEditor.editMode = ''
     varEditor.selectedCuboid = -1
+    updateHierarchy()
     updateProperties()
 }
 
