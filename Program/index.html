@@ -10,9 +10,9 @@
                 <button id="ButtonNew" class="Button" onclick="onButtonNewClick()"></button>
                 <button id="ButtonLoad" class="Button" onclick="onButtonLoadClick()"></button>
                 <button id="ButtonSave" class="Button" onclick="onButtonSaveClick()"></button>
-                <button id="ButtonExport" class="Button"></button>
-                <button id="ButtonCube" class="Button"></button>
-                <button id="ButtonCamera" class="Button"></button>
+                <button id="ButtonExport" class="Button" onclick="onButtonExportClick()"></button>
+                <button id="ButtonCube" class="Button" onclick="addCube()"></button>
+                <button id="ButtonCamera" class="Button" onclick="onButtonCameraClick()"></button>
             </div>
             <div id="Hierarchy">
                 <div id="ItemCuboid"></div>
@@ -20,31 +20,33 @@
             <div id="Space">
                 <canvas id="Screen" width="400" height="400"></canvas>
             </div>
-            <div id="Properties">
+            <div id="Properties" onchange="changeGeometryValue(this)">
                 <div id="Position">
                     <div id="PositionTitle" class="PropertiesContent">Position</div>
                     <div id="PositionNumber" class="PropertiesContent">
-                        X <input id="PositionX" type="number" class="InputNumber"/>
-                        Y <input id="PositionY" type="number" class="InputNumber"/>
-                        Z <input id="PositionZ" type="number" class="InputNumber"/>
+                        X <input id="PositionX" type="number" class="InputNumber" step="0.1"/>
+                        Y <input id="PositionY" type="number" class="InputNumber" step="0.1"/>
+                        Z <input id="PositionZ" type="number" class="InputNumber" step="0.1"/>
                     </div>
                 </div>
                 <div id="Rotation">
                     <div id="RotationTitle" class="PropertiesContent">Rotation</div>
                     <div id="RotationNumber" class="PropertiesContent">
-                        X <input id="RotationX" type="number" class="InputNumber"/>
-                        Y <input id="RotationY" type="number" class="InputNumber"/>
-                        Z <input id="RotationZ" type="number" class="InputNumber"/>
+                        X <input id="RotationX" type="number" class="InputNumber" step="5"/>
+                        Y <input id="RotationY" type="number" class="InputNumber" step="5"/>
+                        Z <input id="RotationZ" type="number" class="InputNumber" step="5"/>
                     </div>
                 </div>
                 <div id="Size"></div>
                     <div id="SizeTitle" class="PropertiesContent">Size</div>
                     <div id="SizeNumber" class="PropertiesContent">
-                        X <input id="SizeX" type="number" class="InputNumber"/>
-                        Y <input id="SizeY" type="number" class="InputNumber"/>
-                        Z <input id="SizeZ" type="number" class="InputNumber"/>
+                        X <input id="SizeX" type="number" class="InputNumber" step="0.1"/>
+                        Y <input id="SizeY" type="number" class="InputNumber" step="0.1"/>
+                        Z <input id="SizeZ" type="number" class="InputNumber" step="0.1"/>
                     </div>
                 </div>
+                <button id="ButtonDelete" class="Button" onclick="onButtonDeleteClick()"></button>
+                <button id="ButtonDone" class="Button" onclick="onButtonDoneClick()"></button>
             </div>
         </div>
 

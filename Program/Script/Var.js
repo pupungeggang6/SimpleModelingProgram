@@ -16,6 +16,20 @@ let DOM = {
     fileSave : null,
     fileLoad : null,
     itemCuboid : null,
+    position : null,
+    positionX : null,
+    positionY : null,
+    positionZ : null,
+    rotation : null,
+    rotationX : null,
+    rotationY : null,
+    rotationZ : null,
+    size : null,
+    sizeX : null,
+    sizeY : null,
+    sizeZ : null,
+    buttonDone : null,
+    buttonDelete : null,
 }
 
 let varMouse = [0, 0]
@@ -39,14 +53,14 @@ let varGL = {
 }
 
 let space3D = {
-    light : [0, 0, -1],
     cameraPosition : [0, 0, 1],
     cameraRotation : [0, 0, 0],
-    cuboid : [
-        {'Name' : 'Cuboid 1', 'Geometry' : [0, 0, 0, 0, 0, 0, 1, 1, 1]}
-    ]
+    cuboid : []
 }
 
 let varEditor = {
     selectedCuboid : -1,
+    editMode : '',
 }
+
+let matrixView = null

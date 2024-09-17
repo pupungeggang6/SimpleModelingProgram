@@ -1,3 +1,11 @@
+function vectorNorm(vec) {
+    return Math.sqrt(vec[0] ** 2 + vec[1] ** 2 + vec[2] ** 2)
+}
+
+function vectorDot(vec1, vec2) {
+    return vec1[0] * vec2[0] + vec1[1] * vec2[1] + vec1[2] * vec2[2]
+}
+
 function matrixIdentity() {
     return [
         1, 0, 0, 0,

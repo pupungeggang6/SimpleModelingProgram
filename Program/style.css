@@ -44,7 +44,21 @@
     background-image : url('Image/ButtonCamera.png');
 }
 
+#ButtonLight {
+    background-image : url('Image/ButtonLight.png');
+}
+
+#ButtonDone {
+    position : absolute;
+    left : 760px;
+    top : 400px;
+    background-image : url('Image/ButtonDone.png');
+}
+
 #ButtonDelete {
+    position : absolute;
+    left : 604px;
+    top : 400px;
     background-image : url('Image/ButtonDelete.png');
 }
 
@@ -55,6 +69,11 @@
     top : 40px;
     width : 200px;
     height : 400px;
+}
+
+.ItemCuboidList {
+    height : 32px;
+    font-size : 24px;
 }
 
 #Space {

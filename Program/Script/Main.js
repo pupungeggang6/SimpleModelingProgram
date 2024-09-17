@@ -13,6 +13,8 @@ function main() {
     DOMInit()
     glInit()
 
+    updateHierarchy()
+
     programFrameCurrent = Date.now()
     programFramePrevious = Date.now() - 16
     programInstance = requestAnimationFrame(loop)
@@ -22,6 +24,22 @@ function DOMInit() {
     DOM.fileLoad = document.getElementById('FileLoad')
     DOM.fileLoad.style.visibility = 'hidden'
     DOM.itemCuboid = document.getElementById('ItemCuboid')
+    DOM.position = document.getElementById('Position')
+    DOM.positionX = document.getElementById('PositionX')
+    DOM.positionY = document.getElementById('PositionY')
+    DOM.positionZ = document.getElementById('PositionZ')
+    DOM.rotation = document.getElementById('Rotation')
+    DOM.rotationX = document.getElementById('RotationX')
+    DOM.rotationY = document.getElementById('RotationY')
+    DOM.rotationZ = document.getElementById('RotationZ')
+    DOM.size = document.getElementById('Size')
+    DOM.sizeX = document.getElementById('SizeX')
+    DOM.sizeY = document.getElementById('SizeY')
+    DOM.sizeZ = document.getElementById('SizeZ')
+    DOM.buttonDone = document.getElementById('ButtonDone')
+    DOM.buttonDelete = document.getElementById('ButtonDelete')
+    DOM.buttonDone.style.display = 'none'
+    DOM.buttonDelete.style.display = 'none'
 }
 
 function glInit() {

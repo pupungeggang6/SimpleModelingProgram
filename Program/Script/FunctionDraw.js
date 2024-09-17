@@ -1,7 +1,7 @@
 function drawSceneInit() {
     gl.clearColor(0.0, 0.0, 0.0, 1.0)
     gl.enable(gl.DEPTH_TEST)
-    gl.lineWidth(5)
+    gl.lineWidth(4)
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
     gl.useProgram(varGL.program)
 }
@@ -41,10 +41,9 @@ function drawAxis() {
 }
 
 function drawSpace() {
-    let matrixCamera = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, -1.1, 0, 0, 0, 1]
-    matrixCamera = matrixMultiply(matrixRotate(space3D.cameraRotation[0], space3D.cameraRotation[1], space3D.cameraRotation[2]), matrixCamera)
-    matrixCamera = matrixMultiply(matrixTranslate(space3D.cameraPosition[0], space3D.cameraPosition[1], space3D.cameraPosition[2]), matrixCamera)
-    gl.uniformMatrix4fv(varGL.location.camera, false, matrixCamera)
+    matrixView = matrixMultiply(matrixTranslate(-space3D.cameraPosition[0], -space3D.cameraPosition[1], -space3D.cameraPosition[2]), matrixIdentity())
+    matrixView = matrixMultiply(matrixRotate(-space3D.cameraRotation[0], -space3D.cameraRotation[1], -space3D.cameraRotation[2]), matrixView)
+    gl.uniformMatrix4fv(varGL.location.camera, false, [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, -1.1, 0, 0, 0, 1])
 
     for (let i = 0; i < space3D.cuboid.length; i++) {
         drawCuboid(space3D.cuboid[i]['Geometry'].slice(0, 3), space3D.cuboid[i]['Geometry'].slice(3, 6), space3D.cuboid[i]['Geometry'].slice(6, 9))
@@ -74,6 +73,13 @@ function drawCuboid(position, rotation, size) {
                 tempBufferData.push(cubeVertice[indexFace[i][j]][k])
             }
         }
+
+        let normal = [normalVector[i][0], normalVector[i][1], normalVector[i][2]]
+        normal = vectorTransform(matrixRotate(rotation[0], rotation[1], rotation[2]), normal)
+        let brightness = Math.max(0.1, vectorDot(normal, [0, 0, 1]) / vectorNorm(normal) / vectorNorm([0, 0, 1]))
+        gl.uniform4f(varGL.location.color, 0.0, 1.0 * brightness, 0.0, 1.0)
+
+        tempBufferData = vectorTransform(matrixView, tempBufferData)
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(tempBufferData), gl.STATIC_DRAW)
         gl.drawArrays(gl.TRIANGLES, 0, 3)
     }
@@ -86,6 +92,7 @@ function drawCuboid(position, rotation, size) {
                 tempBufferData.push(cubeVertice[indexEdge[i][j]][k])
             }
         }
+        tempBufferData = vectorTransform(matrixView, tempBufferData)
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(tempBufferData), gl.STATIC_DRAW)
         gl.drawArrays(gl.LINES, 0, 2)
     }
