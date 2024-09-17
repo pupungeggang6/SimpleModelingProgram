@@ -31,7 +31,7 @@ function onButtonExportClick() {
     const url = window.URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `test`
+    a.download = `test.obj`
     a.click()
     a.remove()
     window.URL.revokeObjectURL(url)
@@ -182,7 +182,7 @@ function convertToObj() {
         for (let i = 0; i < indexFace.length; i++) {
             let normal = [normalVector[i][0], normalVector[i][1], normalVector[i][2]]
             normal = vectorTransform(matrixRotate(rotation[0], rotation[1], rotation[2]), normal)
-            textN += `n ${normal[0].toFixed(3)} ${normal[1].toFixed(3)} ${normal[2].toFixed(3)}\n`
+            textN += `vn ${normal[0].toFixed(3)} ${normal[1].toFixed(3)} ${normal[2].toFixed(3)}\n`
             textF += `f ${IDV + indexFace[i][0]}//${IDN + i} ${IDV + indexFace[i][1]}//${IDN + i} ${IDV + indexFace[i][2]}//${IDN + i}\n`
         }
 
