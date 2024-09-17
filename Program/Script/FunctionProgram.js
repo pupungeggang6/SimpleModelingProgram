@@ -190,6 +190,5 @@ function convertToObj() {
         IDN += 12
     }
 
-    console.log(textV + textN + textF)
     return textV + textN + textF
 }
