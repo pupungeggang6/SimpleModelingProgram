@@ -40,12 +40,8 @@
     background-image : url('Image/ButtonCube.png');
 }
 
-#ButtonCameraMove {
-    background-image : url('Image/ButtonCameraMove.png');
-}
-
-#ButtonCameraRotate {
-    background-image : url('Image/ButtonCameraRotate.png');
+#ButtonCamera {
+    background-image : url('Image/ButtonCamera.png');
 }
 
 #ButtonDelete {

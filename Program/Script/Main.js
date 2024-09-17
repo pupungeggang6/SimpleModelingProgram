@@ -4,7 +4,7 @@ window.oncontextmenu = rightClick
 
 function main() {
     canvas = document.getElementById('Screen')
-    gl = canvas.getContext('webgl')
+    gl = canvas.getContext('webgl2')
 
     canvas.addEventListener('mousedown', mouseDown, false)
     canvas.addEventListener('mousemove', mouseMove, false)
@@ -24,8 +24,8 @@ function DOMInit() {
 }
 
 function glInit() {
-    varGL.shader.sourceVertex = `
-        attribute vec4 a_position;
+    varGL.shader.sourceVertex = `#version 300 es
+        in vec4 a_position;
         uniform mat4 u_camera;
 
         void main() {
@@ -33,12 +33,13 @@ function glInit() {
         }
     `
 
-    varGL.shader.sourceFragment = `
-        precision mediump float;
+    varGL.shader.sourceFragment = `#version 300 es
+        precision highp float;
         uniform vec4 u_color;
+        out vec4 outColor;
 
         void main() {
-            gl_FragColor = u_color;
+            outColor = u_color;
         }
     `
 
