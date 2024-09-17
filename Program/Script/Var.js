@@ -30,6 +30,7 @@ let DOM = {
     sizeZ : null,
     buttonDone : null,
     buttonDelete : null,
+    fileName : null
 }
 
 let varMouse = [0, 0]

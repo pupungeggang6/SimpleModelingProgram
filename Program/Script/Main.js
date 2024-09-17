@@ -38,6 +38,7 @@ function DOMInit() {
     DOM.sizeZ = document.getElementById('SizeZ')
     DOM.buttonDone = document.getElementById('ButtonDone')
     DOM.buttonDelete = document.getElementById('ButtonDelete')
+    DOM.fileName = document.getElementById('FileName')
     DOM.buttonDone.style.display = 'none'
     DOM.buttonDelete.style.display = 'none'
 }

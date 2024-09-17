@@ -19,7 +19,7 @@ function onButtonSaveClick() {
     const url = window.URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `test`
+    a.download = `${DOM.fileName.value}`
     a.click()
     a.remove()
     window.URL.revokeObjectURL(url)
@@ -31,7 +31,7 @@ function onButtonExportClick() {
     const url = window.URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = `test.obj`
+    a.download = `${DOM.fileName.value}.obj`
     a.click()
     a.remove()
     window.URL.revokeObjectURL(url)

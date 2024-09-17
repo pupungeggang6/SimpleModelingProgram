@@ -44,8 +44,10 @@
     background-image : url('Image/ButtonCamera.png');
 }
 
-#ButtonLight {
-    background-image : url('Image/ButtonLight.png');
+#FileName {
+    vertical-align : top;
+    height : 32px;
+    font-size : 24px;
 }
 
 #ButtonDone {
